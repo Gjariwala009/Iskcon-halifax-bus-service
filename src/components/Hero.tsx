@@ -183,7 +183,7 @@ export const Hero: React.FC<HeroProps> = ({
                         </span>
                       </div>
                       <p className="text-[11px] text-stone-500 mt-0.5">
-                        Arrival for Kirtan, Discourse & Evening Prasadam Feast
+                        29 Westwood Blvd, Upper Tantallon • Kirtan, Discourse & Feast
                       </p>
                     </div>
                   </div>

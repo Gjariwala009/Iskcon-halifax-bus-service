@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, ExternalLink, Heart, Sparkles } from 'lucide-react';
+import { ShieldCheck, ExternalLink, Heart, Sparkles, MapPin } from 'lucide-react';
 import { APP_CONFIG } from '../config/appConfig';
 
 interface ZeffyEmbedBookingProps {
@@ -27,15 +27,15 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
         </p>
       </div>
 
-      {/* Quick Pickup Stops Reminder Banner */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-gradient-to-r from-amber-50 to-orange-50/70 p-4 rounded-2xl border border-amber-200/80 text-xs">
+      {/* Quick Route & Destination Reminder Banner */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 bg-gradient-to-r from-amber-50 to-orange-50/70 p-4 rounded-2xl border border-amber-200/80 text-xs">
         <div className="flex items-start space-x-2.5">
           <div className="w-6 h-6 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
             1
           </div>
           <div>
-            <div className="font-bold text-stone-900">Stop 1: Mumford Terminal (3:15 PM)</div>
-            <div className="text-stone-500">7001 Mumford Rd • Near Halifax Shopping Centre Terminal</div>
+            <div className="font-bold text-stone-900">Stop 1: Mumford (3:15 PM)</div>
+            <div className="text-stone-500">Mumford Terminal transit loop</div>
           </div>
         </div>
 
@@ -44,8 +44,18 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
             2
           </div>
           <div>
-            <div className="font-bold text-stone-900">Stop 2: Lacewood Terminal (3:30 PM)</div>
-            <div className="text-stone-500">320 Lacewood Drive • Canada Games Centre transit loop</div>
+            <div className="font-bold text-stone-900">Stop 2: Lacewood (3:30 PM)</div>
+            <div className="text-stone-500">Canada Games Centre transit loop</div>
+          </div>
+        </div>
+
+        <div className="flex items-start space-x-2.5">
+          <div className="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">
+            <MapPin className="w-3.5 h-3.5" />
+          </div>
+          <div>
+            <div className="font-bold text-stone-900">Temple (5:00 PM)</div>
+            <div className="text-stone-500">{APP_CONFIG.templeAddress}</div>
           </div>
         </div>
       </div>

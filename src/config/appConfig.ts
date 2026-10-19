@@ -3,7 +3,7 @@ import { PickupPoint, ScheduledTrip } from '../types';
 export const APP_CONFIG = {
   appName: 'ISKCON Halifax Devotee Bus Shuttle',
   templeName: 'ISKCON Halifax',
-  templeAddress: 'ISKCON Halifax Temple, Halifax, NS',
+  templeAddress: '29 Westwood Blvd, Upper Tantallon, NS B3M 1G5',
   templeSchedule: {
     kirtan: '5:00 PM',
     discourse: '5:45 PM',

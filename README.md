@@ -1,6 +1,6 @@
 # ISKCON Halifax Devotee Bus Shuttle 🛕🚌
 
-Web application for managing seat bookings on the dedicated 14-seater devotee bus shuttle service in Halifax, bringing devotees to the ISKCON Halifax Temple.
+Web application for managing seat bookings on the dedicated 14-seater devotee bus shuttle service in Halifax, bringing devotees to the ISKCON Halifax Temple (29 Westwood Blvd, Upper Tantallon, NS B3M 1G5).
 
 ## Key Features
 
