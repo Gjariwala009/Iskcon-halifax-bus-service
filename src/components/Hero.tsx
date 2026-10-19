@@ -3,18 +3,9 @@ import { Sparkles, MapPin, Clock, ArrowRight, Shield, CheckCircle2, Bus, Users }
 
 interface HeroProps {
   onScrollToBook: () => void;
-  bookedSeatsCount: number;
-  totalSeats: number;
 }
 
-export const Hero: React.FC<HeroProps> = ({
-  onScrollToBook,
-  bookedSeatsCount,
-  totalSeats,
-}) => {
-  const remaining = Math.max(0, totalSeats - bookedSeatsCount);
-  const occupancyPercentage = Math.round((bookedSeatsCount / totalSeats) * 100);
-
+export const Hero: React.FC<HeroProps> = ({ onScrollToBook }) => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-amber-50/70 via-stone-50 to-white pt-8 pb-14 border-b border-amber-100">
       {/* Decorative background glows */}
@@ -54,11 +45,11 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
               <div className="flex items-start space-x-2.5">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <span className="text-sm text-stone-700"><strong>Guaranteed 14 Seats:</strong> Pre-reserved passenger manifest</span>
+                <span className="text-sm text-stone-700"><strong>Guaranteed 14 Seats:</strong> Dedicated devotee rental</span>
               </div>
               <div className="flex items-start space-x-2.5">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <span className="text-sm text-stone-700"><strong>Secure Payment:</strong> Processed via Zeffy</span>
+                <span className="text-sm text-stone-700"><strong>Zero Platform Fees:</strong> 100% processed via Zeffy</span>
               </div>
             </div>
 
@@ -66,65 +57,56 @@ export const Hero: React.FC<HeroProps> = ({
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
               <button
                 onClick={onScrollToBook}
-                disabled={remaining === 0}
-                className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-bold text-base shadow-lg shadow-orange-600/25 hover:shadow-xl hover:shadow-orange-600/35 transition transform active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-bold text-base shadow-lg shadow-orange-600/25 hover:shadow-xl hover:shadow-orange-600/35 transition transform active:scale-95"
               >
-                <span>{remaining > 0 ? 'Reserve Your Seat' : 'Bus is Full'}</span>
+                <span>Reserve Your Seat on Zeffy</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
               <div className="flex items-center space-x-2 text-xs text-stone-500 justify-center sm:justify-start">
                 <Shield className="w-4 h-4 text-stone-400" />
-                <span>Instant reference ID • Driver verifies name</span>
+                <span>Instant confirmation • Registered Non-Profit Society</span>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Trip Overview & Live Availability Card */}
+          {/* Right Column: Trip Overview & Shuttle Route Card */}
           <div className="lg:col-span-5">
             <div className="bg-white rounded-2xl p-6 border border-amber-200/80 shadow-xl shadow-amber-900/5 relative space-y-5">
-              {/* Header with live availability */}
+              
+              {/* Header with trip details */}
               <div className="flex items-center justify-between pb-4 border-b border-stone-100">
                 <div>
                   <div className="text-xs font-bold uppercase tracking-wider text-amber-700 flex items-center gap-1.5">
                     <Bus className="w-3.5 h-3.5 text-amber-600" />
-                    Live Bus Availability
+                    Devotee Bus Shuttle
                   </div>
                   <div className="text-base font-bold text-stone-800">
                     Saturday, Nov 7, 2026
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-black text-amber-600">
-                    {remaining} <span className="text-xs font-normal text-stone-400">/ {totalSeats} left</span>
-                  </div>
-                  <div className="text-[11px] text-stone-500 font-medium">
-                    {bookedSeatsCount} booked
+                  <div className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-xs font-bold">
+                    <Users className="w-3.5 h-3.5 text-amber-700" />
+                    <span>14-Seater Bus</span>
                   </div>
                 </div>
               </div>
 
-              {/* Capacity Progress Bar */}
-              <div className="space-y-1.5 bg-stone-50 p-3.5 rounded-xl border border-stone-200/70">
-                <div className="flex items-center justify-between text-xs">
-                  <span className="font-semibold text-stone-700 flex items-center gap-1">
-                    <Users className="w-3.5 h-3.5 text-amber-600" />
-                    Seat Reservation Status
+              {/* Verified Zeffy Ticketing Banner */}
+              <div className="space-y-1.5 bg-gradient-to-r from-amber-50 to-orange-50/60 p-3.5 rounded-xl border border-amber-200/70 text-xs">
+                <div className="flex items-center justify-between font-semibold text-stone-800">
+                  <span className="flex items-center gap-1.5">
+                    <Shield className="w-4 h-4 text-emerald-600" />
+                    Official Online Booking
                   </span>
-                  <span className="font-bold text-emerald-700">
-                    {remaining > 0 ? `${remaining} Open Seats` : 'Full'}
+                  <span className="text-[11px] text-amber-800 font-bold bg-white px-2 py-0.5 rounded border border-amber-200">
+                    Zero Extra Fees
                   </span>
                 </div>
-                <div className="w-full bg-stone-200 h-2.5 rounded-full overflow-hidden">
-                  <div
-                    className="bg-gradient-to-r from-amber-500 to-orange-500 h-full rounded-full transition-all duration-500"
-                    style={{ width: `${occupancyPercentage}%` }}
-                  />
-                </div>
-                <div className="flex items-center justify-between text-[11px] text-stone-400 pt-0.5">
-                  <span>{bookedSeatsCount} reserved</span>
-                  <span>14 seats max</span>
-                </div>
+                <p className="text-[11px] text-stone-600 leading-snug">
+                  Seat reservations and contributions are safely processed via Zeffy. 100% of contributions directly support the bus rental.
+                </p>
               </div>
 
               {/* Route Timeline */}
@@ -217,4 +199,3 @@ export const Hero: React.FC<HeroProps> = ({
     </section>
   );
 };
-

@@ -4,33 +4,20 @@ Web application for managing seat bookings on the dedicated 14-seater devotee bu
 
 ## Key Features
 
-1. **14-Seater Bus Capacity Management**:
-   - Real-time seat tracking preventing overbooking.
-   - Interactive visual mini-bus seating layout.
-2. **Date Scheduling (Calendar)**:
-   - Calendar selector with **November 7, 2026** currently active for bookings.
-   - Designed for future trips (future dates displayed with automatic lock/unlock structure).
-3. **2 Halifax Pickup & Drop-off Points**:
+1. **Direct One-Step Zeffy Ticketing**:
+   - Embedded Zeffy checkout right on the home page.
+   - Devotees select ticket quantity, enter passenger details, and choose their pickup stop directly in Zeffy without filling out duplicate forms.
+   - 100% of contributions go to ISKCON Halifax with zero platform transaction fees.
+2. **2 Halifax Pickup & Drop-off Points**:
    - **Stop 1**: Mumford Terminal (Pickup: 3:15 PM | Return drop-off: 9:00 PM)
    - **Stop 2**: Lacewood Terminal (Pickup: 3:30 PM | Return drop-off: 8:45 PM)
    - **Temple Destination**: 29 Westwood Blvd, Upper Tantallon (Arrival & Darshan: 4:00 PM | Program: 5:00 PM | Return departure: 8:15 PM)
    - Fully customizable in `src/config/appConfig.ts`.
-4. **Multi-Passenger Booking Flow**:
-   - Primary Booker details (Full name, phone number, email address).
-   - Dynamic inputs for each passenger's full name (for 1 to multiple seats).
-   - Generates a unique booking reference code (`ISK-261107-XXXX`).
-5. **Zeffy Payment Integration**:
-   - Directs attendees to complete payment via Zeffy.
-   - Prompts attendees to input their Booking Reference for automatic matching.
-   - Configurable in `.env` (`VITE_ZEFFY_PAYMENT_URL`).
-6. **Driver & Organizer Manifest**:
-   - Dedicated driver dashboard (protected by PIN, default: `1471`).
-   - Real-time passenger list with door check-in ("Boarded" toggle).
-   - **1-Click Download CSV**: Generates ready-to-use CSV list for driver / spreadsheet verification.
-   - **1-Click Print Manifest**: Clean, high-contrast clipboard-ready driver sheet.
-7. **Firebase & Resilient Fallback**:
-   - Pre-configured Firestore integration (`bookings` collection).
-   - Seamless local storage fallback with sample data so the app runs out-of-the-box before Firebase keys are entered!
+3. **Trip Details & Visual Route Timeline**:
+   - Complete outbound & return schedule displayed prominently.
+   - Clear arrival timing for early Darshan and association before the 5:00 PM festival program.
+4. **Organizer Passenger Management**:
+   - Organizers log into Zeffy (`zeffy.com`) to view real-time attendee lists, download Excel/CSV, or check in passengers at boarding.
 
 ---
 
