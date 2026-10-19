@@ -11,8 +11,8 @@ Web application for managing seat bookings on the dedicated 14-seater devotee bu
    - Calendar selector with **November 7, 2026** currently active for bookings.
    - Designed for future trips (future dates displayed with automatic lock/unlock structure).
 3. **2 Halifax Pickup Points**:
-   - **Stop 1**: Halifax Shopping Centre / Mumford Terminal (4:15 PM departure)
-   - **Stop 2**: Dalhousie University / Downtown SUB (4:35 PM departure)
+   - **Stop 1**: Mumford Terminal (4:15 PM departure)
+   - **Stop 2**: Lacewood Terminal (4:35 PM departure)
    - Fully customizable in `src/config/appConfig.ts`.
 4. **Multi-Passenger Booking Flow**:
    - Primary Booker details (Full name, phone number, email address).

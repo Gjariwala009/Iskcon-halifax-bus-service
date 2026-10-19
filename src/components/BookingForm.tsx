@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Users, User, Mail, Phone, FileText, AlertTriangle, ShieldCheck, ArrowRight } from 'lucide-react';
+import { Users, User, Mail, Phone, FileText, AlertTriangle, ShieldCheck, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { PickupPoint } from '../types';
 
 interface BookingFormProps {
@@ -48,21 +48,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     });
   }, [seatCount]);
 
-  // Keep passenger 1 in sync with booker name if checked
-  useEffect(() => {
-    if (sameAsBooker && bookerName) {
-      setPassengers((prev) => {
-        const next = [...prev];
-        next[0] = bookerName;
-        return next;
-      });
-    }
-  }, [bookerName, sameAsBooker]);
-
   const handlePassengerNameChange = (index: number, value: string) => {
-    if (index === 0 && sameAsBooker) {
-      setSameAsBooker(false);
-    }
     setPassengers((prev) => {
       const next = [...prev];
       next[index] = value;
@@ -74,7 +60,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
     e.preventDefault();
     setErrorMsg(null);
 
-    // Validation
+    // Booker validation
     if (!bookerName.trim()) {
       setErrorMsg('Please enter the booker’s full name.');
       return;
@@ -88,17 +74,46 @@ export const BookingForm: React.FC<BookingFormProps> = ({
       return;
     }
 
-    // Check all passenger names
-    for (let i = 0; i < seatCount; i++) {
-      if (!passengers[i] || !passengers[i].trim()) {
-        setErrorMsg(`Please enter the full name for Passenger #${i + 1}.`);
-        return;
-      }
-    }
-
     if (seatCount > availableSeats) {
       setErrorMsg(`Only ${availableSeats} seat(s) remain on this 14-seater bus.`);
       return;
+    }
+
+    // Build passenger manifest without requiring duplicate entry for booker
+    const passengerList: { id: string; fullName: string }[] = [];
+
+    if (sameAsBooker) {
+      passengerList.push({
+        id: `p-${Date.now()}-0`,
+        fullName: bookerName.trim(),
+      });
+      for (let i = 1; i < seatCount; i++) {
+        const pName = (passengers[i] || '').trim();
+        if (!pName) {
+          setErrorMsg(`Please enter the full name for Passenger #${i + 1}.`);
+          return;
+        }
+        passengerList.push({
+          id: `p-${Date.now()}-${i}`,
+          fullName: pName,
+        });
+      }
+    } else {
+      for (let i = 0; i < seatCount; i++) {
+        const pName = (passengers[i] || '').trim();
+        if (!pName) {
+          setErrorMsg(
+            seatCount === 1
+              ? 'Please enter the passenger’s full name.'
+              : `Please enter the full name for Passenger #${i + 1}.`
+          );
+          return;
+        }
+        passengerList.push({
+          id: `p-${Date.now()}-${i}`,
+          fullName: pName,
+        });
+      }
     }
 
     try {
@@ -107,10 +122,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
         bookerEmail: bookerEmail.trim(),
         bookerPhone: bookerPhone.trim(),
         seatCount,
-        passengers: passengers.map((name, i) => ({
-          id: `p-${Date.now()}-${i}`,
-          fullName: name.trim(),
-        })),
+        passengers: passengerList,
         notes: notes.trim() || undefined,
       });
     } catch (err: unknown) {
@@ -233,47 +245,134 @@ export const BookingForm: React.FC<BookingFormProps> = ({
           </div>
         </div>
 
-        {/* Dynamic Passenger Names (Required for Driver Verification) */}
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <label className="block text-xs font-bold uppercase tracking-wider text-stone-700">
-              Full Names of All Passengers ({seatCount} {seatCount === 1 ? 'Person' : 'People'})
-            </label>
-            <span className="text-[11px] text-amber-700 font-medium">
-              * Needed for driver check-in sheet
-            </span>
-          </div>
-
-          {seatCount > 1 && (
-            <label className="flex items-center space-x-2 text-xs text-stone-600 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={sameAsBooker}
-                onChange={(e) => setSameAsBooker(e.target.checked)}
-                className="rounded text-amber-600 focus:ring-amber-500"
-              />
-              <span>Passenger 1 is the same as the Booker</span>
-            </label>
-          )}
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            {passengers.map((passengerName, idx) => (
-              <div key={idx} className="bg-stone-50 p-3 rounded-xl border border-stone-200">
-                <label className="block text-xs font-semibold text-stone-700 mb-1">
-                  Passenger #{idx + 1} Full Name *
+        {/* Passenger Information */}
+        {seatCount === 1 ? (
+          sameAsBooker ? (
+            <div className="bg-amber-50/60 border border-amber-200/80 rounded-xl p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-full bg-emerald-100 border border-emerald-300 flex items-center justify-center text-emerald-700 shrink-0">
+                  <CheckCircle2 className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-stone-900">
+                    Passenger: {bookerName.trim() || 'Primary Booker'} (1 Seat Reserved)
+                  </div>
+                  <div className="text-[11px] text-stone-500">
+                    Traveling under the primary booker name & contact details above.
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setSameAsBooker(false);
+                  setPassengers(['']);
+                }}
+                className="text-xs text-amber-700 font-semibold hover:text-amber-900 hover:underline shrink-0 text-left sm:text-right"
+              >
+                Booking for someone else?
+              </button>
+            </div>
+          ) : (
+            <div className="bg-stone-50 p-4 rounded-xl border border-stone-200 space-y-2">
+              <div className="flex items-center justify-between">
+                <label className="block text-xs font-bold uppercase tracking-wider text-stone-700">
+                  Passenger Full Name *
                 </label>
+                <button
+                  type="button"
+                  onClick={() => setSameAsBooker(true)}
+                  className="text-xs text-amber-700 font-semibold hover:underline"
+                >
+                  I am traveling myself
+                </button>
+              </div>
+              <input
+                type="text"
+                required
+                placeholder="Passenger legal or full name"
+                value={passengers[0] || ''}
+                onChange={(e) => handlePassengerNameChange(0, e.target.value)}
+                className="w-full px-3 py-2 text-sm bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
+              />
+            </div>
+          )
+        ) : (
+          /* Multi-Passenger (seatCount > 1) */
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <label className="block text-xs font-bold uppercase tracking-wider text-stone-700">
+                Passenger Names ({seatCount} People)
+              </label>
+              <span className="text-[11px] text-amber-700 font-medium">
+                * Needed for driver check-in sheet
+              </span>
+            </div>
+
+            {/* Passenger 1 Status */}
+            {sameAsBooker ? (
+              <div className="bg-amber-50/60 border border-amber-200/80 rounded-xl p-3 flex items-center justify-between text-xs">
+                <div className="flex items-center space-x-2">
+                  <span className="w-5 h-5 rounded-full bg-amber-600 text-white flex items-center justify-center text-[10px] font-bold">
+                    1
+                  </span>
+                  <span className="text-stone-800">
+                    <strong>Passenger #1:</strong> {bookerName.trim() || 'Primary Booker'} <span className="text-stone-500">(Booker)</span>
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setSameAsBooker(false)}
+                  className="text-xs text-stone-500 hover:text-stone-800 underline"
+                >
+                  Change Passenger #1
+                </button>
+              </div>
+            ) : (
+              <div className="bg-stone-50 p-3 rounded-xl border border-stone-200 space-y-1">
+                <div className="flex items-center justify-between">
+                  <label className="block text-xs font-semibold text-stone-700">
+                    Passenger #1 Full Name *
+                  </label>
+                  <button
+                    type="button"
+                    onClick={() => setSameAsBooker(true)}
+                    className="text-xs text-amber-700 font-semibold hover:underline"
+                  >
+                    Same as Booker
+                  </button>
+                </div>
                 <input
                   type="text"
                   required
-                  placeholder={`Passenger ${idx + 1} legal or full name`}
-                  value={passengerName}
-                  onChange={(e) => handlePassengerNameChange(idx, e.target.value)}
+                  placeholder="Passenger 1 legal or full name"
+                  value={passengers[0] || ''}
+                  onChange={(e) => handlePassengerNameChange(0, e.target.value)}
                   className="w-full px-3 py-1.5 text-sm bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
                 />
               </div>
-            ))}
+            )}
+
+            {/* Additional Passengers (Seat 2 to N) */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {Array.from({ length: seatCount - 1 }, (_, i) => i + 1).map((idx) => (
+                <div key={idx} className="bg-stone-50 p-3 rounded-xl border border-stone-200">
+                  <label className="block text-xs font-semibold text-stone-700 mb-1">
+                    Passenger #{idx + 1} Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    placeholder={`Passenger ${idx + 1} legal or full name`}
+                    value={passengers[idx] || ''}
+                    onChange={(e) => handlePassengerNameChange(idx, e.target.value)}
+                    className="w-full px-3 py-1.5 text-sm bg-white border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Notes / Special Instructions */}
         <div>

@@ -220,7 +220,7 @@ export const DriverManifest: React.FC<DriverManifestProps> = ({
         <div className="bg-white p-4 rounded-xl border border-stone-200 shadow-sm">
           <div className="text-xs font-semibold text-stone-500 uppercase">Active Pickup Points</div>
           <div className="text-2xl font-black text-stone-900 mt-1">2 Stops</div>
-          <div className="text-[11px] text-stone-400 mt-0.5">Mumford & Dalhousie</div>
+          <div className="text-[11px] text-stone-400 mt-0.5">Mumford & Lacewood</div>
         </div>
       </div>
 
@@ -229,7 +229,7 @@ export const DriverManifest: React.FC<DriverManifestProps> = ({
         <h1 className="text-2xl font-bold">ISKCON Halifax Devotee Bus — Driver Manifest</h1>
         <p className="text-sm">Date: Saturday, November 7, 2026 • 14-Seater Bus</p>
         <p className="text-xs text-gray-600 mt-1">
-          Stop 1: Halifax Shopping Centre / Mumford (4:15 PM) | Stop 2: Dalhousie SUB (4:35 PM) | Destination: ISKCON Halifax Temple
+          Stop 1: Mumford Terminal (4:15 PM) | Stop 2: Lacewood Terminal (4:35 PM) | Destination: ISKCON Halifax Temple
         </p>
       </div>
 

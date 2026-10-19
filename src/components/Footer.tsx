@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
                 <span className="text-white font-medium">4:15 PM</span>
               </div>
               <div className="flex justify-between">
-                <span>Stop 2 (Dalhousie SUB):</span>
+                <span>Stop 2 (Lacewood Terminal):</span>
                 <span className="text-white font-medium">4:35 PM</span>
               </div>
               <div className="flex justify-between">

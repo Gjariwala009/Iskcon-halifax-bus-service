@@ -50,58 +50,26 @@ if (isFirebaseConfigured) {
 // Local storage key for fallback
 const LOCAL_STORAGE_KEY = 'iskcon_halifax_bus_bookings';
 
-// Initial sample data for demonstration if local storage is empty
-const INITIAL_DEMO_BOOKINGS: Booking[] = [
-  {
-    id: 'demo-booking-1',
-    reference: 'ISK-261107-M3A8',
-    tripDate: '2026-11-07',
-    pickupPointId: 'mumford-terminal',
-    pickupPointName: 'Halifax Shopping Centre / Mumford Terminal',
-    bookerName: 'Gauranga Das',
-    bookerEmail: 'gauranga.sample@iskconhalifax.org',
-    bookerPhone: '+1 (902) 555-0142',
-    seatCount: 2,
-    passengers: [
-      { id: 'p1', fullName: 'Gauranga Das', boarded: true },
-      { id: 'p2', fullName: 'Radha Priya Devi', boarded: true },
-    ],
-    notes: 'Elderly passenger, need front row if possible',
-    paymentStatus: 'completed',
-    boardedCount: 2,
-    createdAt: new Date('2026-10-18T10:00:00Z').toISOString(),
-  },
-  {
-    id: 'demo-booking-2',
-    reference: 'ISK-261107-B7X4',
-    tripDate: '2026-11-07',
-    pickupPointId: 'dalhousie-sub',
-    pickupPointName: 'Dalhousie University / Downtown Halifax',
-    bookerName: 'Anita Sharma',
-    bookerEmail: 'anita.sharma@dal.ca',
-    bookerPhone: '+1 (902) 555-0189',
-    seatCount: 1,
-    passengers: [
-      { id: 'p3', fullName: 'Anita Sharma', boarded: false },
-    ],
-    notes: 'Dalhousie student',
-    paymentStatus: 'completed',
-    boardedCount: 0,
-    createdAt: new Date('2026-10-19T08:30:00Z').toISOString(),
-  },
-];
-
+// Initial local storage starts empty so seats booked is zero
 function getLocalBookings(): Booking[] {
   try {
     const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
     if (!raw) {
-      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(INITIAL_DEMO_BOOKINGS));
-      return INITIAL_DEMO_BOOKINGS;
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([]));
+      return [];
     }
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    // Sanitize any previous demo bookings so seats booked defaults to 0
+    const filtered = Array.isArray(parsed) 
+      ? parsed.filter((b: any) => !b.id?.startsWith('demo-'))
+      : [];
+    if (filtered.length !== (Array.isArray(parsed) ? parsed.length : 0)) {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(filtered));
+    }
+    return filtered;
   } catch (e) {
     console.error('Error reading local storage:', e);
-    return INITIAL_DEMO_BOOKINGS;
+    return [];
   }
 }
 
