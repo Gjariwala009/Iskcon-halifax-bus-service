@@ -11,7 +11,7 @@ export const APP_CONFIG = {
     prasadamFeast: '7:15 PM',
   },
   busCapacity: 14, // 14-seater bus
-  driverPin: '108', // Default driver PIN for admin manifest access
+  driverPin: '1471', // Driver PIN for admin manifest access
   
   // Zeffy payment link (can be overridden via VITE_ZEFFY_PAYMENT_URL env var)
   zeffyPaymentUrl: import.meta.env.VITE_ZEFFY_PAYMENT_URL || 'https://www.zeffy.com/en-CA/ticketing/iskcon-halifax-bus-nov7',

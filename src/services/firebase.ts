@@ -120,6 +120,7 @@ export async function saveBooking(
   const reference = generateReference(bookingData.tripDate);
   const newBooking: Booking = {
     ...bookingData,
+    notes: bookingData.notes || '',
     id: `booking-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
     reference,
     createdAt: new Date().toISOString(),
@@ -128,12 +129,26 @@ export async function saveBooking(
 
   if (db) {
     try {
-      const docRef = await addDoc(collection(db, 'bookings'), {
-        ...newBooking,
+      // Build safe payload without any undefined values (Firestore rejects undefined)
+      const cleanPayload: Record<string, any> = {};
+      Object.entries(newBooking).forEach(([key, val]) => {
+        if (val !== undefined) {
+          cleanPayload[key] = val;
+        }
       });
+
+      // Ensure passengers array also has defined fields
+      cleanPayload.passengers = (newBooking.passengers || []).map((p) => ({
+        id: p.id,
+        fullName: p.fullName,
+        boarded: Boolean(p.boarded),
+      }));
+
+      const docRef = await addDoc(collection(db, 'bookings'), cleanPayload);
+      console.info('Successfully saved booking to Firestore with ID:', docRef.id);
       return { ...newBooking, id: docRef.id };
     } catch (error) {
-      console.warn('Firestore save failed, saving locally:', error);
+      console.error('Firestore save failed, saving locally:', error);
     }
   }
 

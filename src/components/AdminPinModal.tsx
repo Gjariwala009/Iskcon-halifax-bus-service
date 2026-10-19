@@ -47,7 +47,7 @@ export const AdminPinModal: React.FC<AdminPinModalProps> = ({
           Driver & Organizer Access
         </h3>
         <p className="text-xs text-stone-500 mt-1 mb-4">
-          Enter the access PIN to view and download the passenger manifest list. (Default: 108)
+          Enter the access PIN to view and download the passenger manifest list.
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -55,7 +55,7 @@ export const AdminPinModal: React.FC<AdminPinModalProps> = ({
             <input
               type="password"
               autoFocus
-              placeholder="Enter PIN (108)"
+              placeholder="Enter PIN"
               value={pin}
               onChange={(e) => {
                 setPin(e.target.value);

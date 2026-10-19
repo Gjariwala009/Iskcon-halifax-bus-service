@@ -23,7 +23,7 @@ Web application for managing seat bookings on the dedicated 14-seater devotee bu
    - Prompts attendees to input their Booking Reference for automatic matching.
    - Configurable in `.env` (`VITE_ZEFFY_PAYMENT_URL`).
 6. **Driver & Organizer Manifest**:
-   - Dedicated driver dashboard (protected by PIN, default: `108`).
+   - Dedicated driver dashboard (protected by PIN, default: `1471`).
    - Real-time passenger list with door check-in ("Boarded" toggle).
    - **1-Click Download CSV**: Generates ready-to-use CSV list for driver / spreadsheet verification.
    - **1-Click Print Manifest**: Clean, high-contrast clipboard-ready driver sheet.
@@ -74,6 +74,6 @@ Once `.env` is configured, the application automatically switches to live Fireba
 
 ## Driver Manifest Access
 - Click **"Driver & Admin Manifest"** in the top navigation bar.
-- Enter PIN: `108` (can be changed in `src/config/appConfig.ts`).
+- Enter PIN: `1471` (can be changed in `src/config/appConfig.ts`).
 - Filter by pickup stop or search any passenger name.
 - Click **"Download CSV for Driver"** to export the list.
