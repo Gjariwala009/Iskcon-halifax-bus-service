@@ -89,7 +89,7 @@ export const PickupSelector: React.FC<PickupSelectorProps> = ({
             Shuttle Itinerary Note:
           </div>
           <p className="text-stone-600">
-            The bus picks up devotees at <strong>Mumford Terminal</strong> first at <strong>4:15 PM</strong>, then arrives at <strong>Lacewood Terminal</strong> at <strong>4:35 PM</strong>, before proceeding directly to ISKCON Halifax Temple for the 5:00 PM program.
+            The bus picks up devotees at <strong>Mumford Terminal</strong> first at <strong>3:15 PM</strong>, then arrives at <strong>Lacewood Terminal</strong> at <strong>3:30 PM</strong>, before proceeding directly to ISKCON Halifax Temple for the 5:00 PM program.
           </p>
         </div>
       </div>

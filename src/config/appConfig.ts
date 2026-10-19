@@ -13,8 +13,9 @@ export const APP_CONFIG = {
   busCapacity: 14, // 14-seater bus
   driverPin: '1471', // Driver PIN for admin manifest access
   
-  // Zeffy payment link (can be overridden via VITE_ZEFFY_PAYMENT_URL env var)
-  zeffyPaymentUrl: import.meta.env.VITE_ZEFFY_PAYMENT_URL || 'https://www.zeffy.com/en-CA/ticketing/iskcon-halifax-bus-nov7',
+  // Zeffy payment and embed links
+  zeffyPaymentUrl: import.meta.env.VITE_ZEFFY_PAYMENT_URL || 'https://www.zeffy.com/en-CA/ticketing/iskcon-halifax-devotee-bus-shuttle',
+  zeffyEmbedUrl: import.meta.env.VITE_ZEFFY_EMBED_URL || 'https://www.zeffy.com/embed/ticketing/iskcon-halifax-devotee-bus-shuttle',
   
   // Support contact
   supportPhone: '+1 (902) 000-0000',
@@ -27,7 +28,7 @@ export const APP_CONFIG = {
       name: 'Pickup Point 1: Mumford Terminal',
       shortName: 'Mumford Terminal',
       address: '7001 Mumford Rd, Halifax, NS (Near Halifax Shopping Centre Terminal)',
-      pickupTime: '4:15 PM',
+      pickupTime: '3:15 PM',
       landmark: 'Near the Mumford Bus Terminal entrance / Sobeys parking edge',
       description: 'Convenient central west-end connection point with ample public transit links.',
     },
@@ -36,7 +37,7 @@ export const APP_CONFIG = {
       name: 'Pickup Point 2: Lacewood Terminal',
       shortName: 'Lacewood Terminal',
       address: '320 Lacewood Drive, Halifax, NS (Near Canada Games Centre)',
-      pickupTime: '4:35 PM',
+      pickupTime: '3:30 PM',
       landmark: 'Main transit loop near the shelter / Canada Games Centre',
       description: 'Convenient Clayton Park and Mainland North connection point with Park & Ride options.',
     },

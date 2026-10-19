@@ -143,7 +143,7 @@ export const Hero: React.FC<HeroProps> = ({
                       <div className="flex items-center justify-between">
                         <span className="font-bold text-stone-900 text-xs">Mumford Terminal</span>
                         <span className="text-xs font-extrabold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200/70">
-                          4:15 PM
+                          3:15 PM
                         </span>
                       </div>
                       <p className="text-[11px] text-stone-500 mt-0.5">
@@ -161,7 +161,7 @@ export const Hero: React.FC<HeroProps> = ({
                       <div className="flex items-center justify-between">
                         <span className="font-bold text-stone-900 text-xs">Lacewood Terminal</span>
                         <span className="text-xs font-extrabold text-amber-700 bg-amber-50 px-2 py-0.5 rounded border border-amber-200/70">
-                          4:35 PM
+                          3:30 PM
                         </span>
                       </div>
                       <p className="text-[11px] text-stone-500 mt-0.5">
