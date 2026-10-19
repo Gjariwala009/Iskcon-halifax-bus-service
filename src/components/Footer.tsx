@@ -58,20 +58,32 @@ export const Footer: React.FC = () => {
             </h4>
             <div className="space-y-1.5 text-stone-400">
               <div className="flex justify-between">
-                <span>Stop 1 (Mumford Terminal):</span>
+                <span>Mumford Pickup:</span>
                 <span className="text-white font-medium">3:15 PM</span>
               </div>
               <div className="flex justify-between">
-                <span>Stop 2 (Lacewood Terminal):</span>
+                <span>Lacewood Pickup:</span>
                 <span className="text-white font-medium">3:30 PM</span>
               </div>
               <div className="flex justify-between">
-                <span>Temple Arrival & Kirtan:</span>
+                <span>Temple Arrival & Darshan:</span>
+                <span className="text-white font-medium">4:00 PM</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Main Kirtan & Program:</span>
                 <span className="text-white font-medium">5:00 PM</span>
               </div>
               <div className="flex justify-between">
-                <span>Return Bus Departs:</span>
+                <span>Temple Return Departs:</span>
                 <span className="text-white font-medium">8:15 PM</span>
+              </div>
+              <div className="flex justify-between text-amber-400/90 font-medium">
+                <span>Lacewood Drop-off:</span>
+                <span className="text-amber-400">8:45 PM</span>
+              </div>
+              <div className="flex justify-between text-amber-400/90 font-medium">
+                <span>Mumford Drop-off:</span>
+                <span className="text-amber-400">9:00 PM</span>
               </div>
             </div>
           </div>

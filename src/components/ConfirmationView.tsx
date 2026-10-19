@@ -156,7 +156,8 @@ export const ConfirmationView: React.FC<ConfirmationViewProps> = ({
             <div className="font-bold text-amber-900">Important Reminders for Saturday, Nov 7:</div>
             <ul className="list-disc list-inside space-y-1 text-stone-600">
               <li>Please be at the pickup stop 10 minutes prior to scheduled departure.</li>
-              <li>Return bus will depart from ISKCON Halifax Temple back to both stops at approximately 8:15 PM following Gaura Aarti and Prasadam feast.</li>
+              <li>Return bus departs ISKCON Halifax Temple (29 Westwood Blvd) at approximately 8:15 PM following Gaura Aarti and Prasadam feast.</li>
+              <li>Return drop-offs: <strong>Lacewood Terminal at 8:45 PM</strong>, then <strong>Mumford Terminal at 9:00 PM</strong>.</li>
               <li>For any last-minute questions or delays, contact temple transport volunteers.</li>
             </ul>
           </div>
