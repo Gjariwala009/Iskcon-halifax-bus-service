@@ -13,7 +13,7 @@ Web application for managing seat bookings on the dedicated 14-seater devotee bu
 3. **2 Halifax Pickup & Drop-off Points**:
    - **Stop 1**: Mumford Terminal (Pickup: 3:15 PM | Return drop-off: 9:00 PM)
    - **Stop 2**: Lacewood Terminal (Pickup: 3:30 PM | Return drop-off: 8:45 PM)
-   - **Temple Destination**: 29 Westwood Blvd, Upper Tantallon (Arrival: 5:00 PM | Return departure: 8:15 PM)
+   - **Temple Destination**: 29 Westwood Blvd, Upper Tantallon (Arrival & Darshan: 4:00 PM | Program: 5:00 PM | Return departure: 8:15 PM)
    - Fully customizable in `src/config/appConfig.ts`.
 4. **Multi-Passenger Booking Flow**:
    - Primary Booker details (Full name, phone number, email address).

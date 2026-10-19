@@ -57,7 +57,7 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
           </div>
           <div>
             <div className="font-bold text-stone-900">Temple Destination</div>
-            <div className="text-emerald-900 font-semibold mt-0.5">Arrive: 5:00 PM • Depart: 8:15 PM</div>
+            <div className="text-emerald-900 font-semibold mt-0.5">Arrive: 4:00 PM (Darshan) • Depart: 8:15 PM</div>
             <div className="text-stone-500 text-[11px] mt-0.5">{APP_CONFIG.templeAddress}</div>
           </div>
         </div>

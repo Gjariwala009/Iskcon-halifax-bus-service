@@ -179,11 +179,11 @@ export const Hero: React.FC<HeroProps> = ({
                       <div className="flex items-center justify-between">
                         <span className="font-bold text-stone-900 text-xs">ISKCON Halifax Temple</span>
                         <span className="text-xs font-extrabold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
-                          5:00 PM
+                          4:00 PM
                         </span>
                       </div>
                       <p className="text-[11px] text-stone-500 mt-0.5">
-                        29 Westwood Blvd, Upper Tantallon • Kirtan, Discourse & Feast
+                        29 Westwood Blvd, Upper Tantallon • Darshan & Welcome (Program starts 5:00 PM)
                       </p>
                     </div>
                   </div>

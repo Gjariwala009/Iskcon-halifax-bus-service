@@ -229,7 +229,7 @@ export const DriverManifest: React.FC<DriverManifestProps> = ({
         <h1 className="text-2xl font-bold">ISKCON Halifax Devotee Bus — Driver Manifest</h1>
         <p className="text-sm">Date: Saturday, November 7, 2026 • 14-Seater Bus</p>
         <p className="text-xs text-gray-600 mt-1">
-          <strong>Outbound:</strong> Stop 1: Mumford (3:15 PM) → Stop 2: Lacewood (3:30 PM) → ISKCON Temple (5:00 PM) | <strong>Return:</strong> Departs Temple (8:15 PM) → Lacewood Drop-off (8:45 PM) → Mumford Drop-off (9:00 PM)
+          <strong>Outbound:</strong> Stop 1: Mumford (3:15 PM) → Stop 2: Lacewood (3:30 PM) → ISKCON Temple (4:00 PM) | <strong>Return:</strong> Departs Temple (8:15 PM) → Lacewood Drop-off (8:45 PM) → Mumford Drop-off (9:00 PM)
         </p>
       </div>
 
