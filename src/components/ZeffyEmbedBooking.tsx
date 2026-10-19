@@ -34,8 +34,9 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
             1
           </div>
           <div>
-            <div className="font-bold text-stone-900">Stop 1: Mumford (3:15 PM)</div>
-            <div className="text-stone-500">Mumford Terminal transit loop</div>
+            <div className="font-bold text-stone-900">Stop 1: Mumford</div>
+            <div className="text-amber-900 font-semibold mt-0.5">Pickup: 3:15 PM • Return: 9:00 PM</div>
+            <div className="text-stone-500 text-[11px] mt-0.5">Mumford Terminal transit loop</div>
           </div>
         </div>
 
@@ -44,8 +45,9 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
             2
           </div>
           <div>
-            <div className="font-bold text-stone-900">Stop 2: Lacewood (3:30 PM)</div>
-            <div className="text-stone-500">Canada Games Centre transit loop</div>
+            <div className="font-bold text-stone-900">Stop 2: Lacewood</div>
+            <div className="text-amber-900 font-semibold mt-0.5">Pickup: 3:30 PM • Return: 8:45 PM</div>
+            <div className="text-stone-500 text-[11px] mt-0.5">Canada Games Centre transit loop</div>
           </div>
         </div>
 
@@ -54,8 +56,9 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
             <MapPin className="w-3.5 h-3.5" />
           </div>
           <div>
-            <div className="font-bold text-stone-900">Temple (5:00 PM)</div>
-            <div className="text-stone-500">{APP_CONFIG.templeAddress}</div>
+            <div className="font-bold text-stone-900">Temple Destination</div>
+            <div className="text-emerald-900 font-semibold mt-0.5">Arrive: 5:00 PM • Depart: 8:15 PM</div>
+            <div className="text-stone-500 text-[11px] mt-0.5">{APP_CONFIG.templeAddress}</div>
           </div>
         </div>
       </div>

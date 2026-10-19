@@ -29,6 +29,7 @@ export const APP_CONFIG = {
       shortName: 'Mumford Terminal',
       address: '7001 Mumford Rd, Halifax, NS (Near Halifax Shopping Centre Terminal)',
       pickupTime: '3:15 PM',
+      dropOffTime: '9:00 PM',
       landmark: 'Near the Mumford Bus Terminal entrance / Sobeys parking edge',
       description: 'Convenient central west-end connection point with ample public transit links.',
     },
@@ -38,6 +39,7 @@ export const APP_CONFIG = {
       shortName: 'Lacewood Terminal',
       address: '320 Lacewood Drive, Halifax, NS (Near Canada Games Centre)',
       pickupTime: '3:30 PM',
+      dropOffTime: '8:45 PM',
       landmark: 'Main transit loop near the shelter / Canada Games Centre',
       description: 'Convenient Clayton Park and Mainland North connection point with Park & Ride options.',
     },
@@ -53,7 +55,7 @@ export const APP_CONFIG = {
       isOpen: true,
       templeArrivalTime: '5:00 PM',
       returnDepartureTime: '8:15 PM',
-      returnArrivalTime: '8:50 PM',
+      returnArrivalTime: '8:45 PM (Lacewood) / 9:00 PM (Mumford)',
     },
     {
       date: '2026-11-14',
@@ -63,7 +65,7 @@ export const APP_CONFIG = {
       isOpen: false,
       templeArrivalTime: '5:00 PM',
       returnDepartureTime: '8:15 PM',
-      returnArrivalTime: '8:50 PM',
+      returnArrivalTime: '8:45 PM (Lacewood) / 9:00 PM (Mumford)',
     },
     {
       date: '2026-11-21',
@@ -73,7 +75,7 @@ export const APP_CONFIG = {
       isOpen: false,
       templeArrivalTime: '5:00 PM',
       returnDepartureTime: '8:15 PM',
-      returnArrivalTime: '8:50 PM',
+      returnArrivalTime: '8:45 PM (Lacewood) / 9:00 PM (Mumford)',
     },
     {
       date: '2026-11-28',
@@ -83,7 +85,7 @@ export const APP_CONFIG = {
       isOpen: false,
       templeArrivalTime: '5:00 PM',
       returnDepartureTime: '8:15 PM',
-      returnArrivalTime: '8:50 PM',
+      returnArrivalTime: '8:45 PM (Lacewood) / 9:00 PM (Mumford)',
     },
   ] as ScheduledTrip[],
 };

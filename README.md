@@ -10,9 +10,10 @@ Web application for managing seat bookings on the dedicated 14-seater devotee bu
 2. **Date Scheduling (Calendar)**:
    - Calendar selector with **November 7, 2026** currently active for bookings.
    - Designed for future trips (future dates displayed with automatic lock/unlock structure).
-3. **2 Halifax Pickup Points**:
-   - **Stop 1**: Mumford Terminal (3:15 PM departure)
-   - **Stop 2**: Lacewood Terminal (3:30 PM departure)
+3. **2 Halifax Pickup & Drop-off Points**:
+   - **Stop 1**: Mumford Terminal (Pickup: 3:15 PM | Return drop-off: 9:00 PM)
+   - **Stop 2**: Lacewood Terminal (Pickup: 3:30 PM | Return drop-off: 8:45 PM)
+   - **Temple Destination**: 29 Westwood Blvd, Upper Tantallon (Arrival: 5:00 PM | Return departure: 8:15 PM)
    - Fully customizable in `src/config/appConfig.ts`.
 4. **Multi-Passenger Booking Flow**:
    - Primary Booker details (Full name, phone number, email address).

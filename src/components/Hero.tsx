@@ -191,14 +191,22 @@ export const Hero: React.FC<HeroProps> = ({
               </div>
 
               {/* Return Window Footer */}
-              <div className="bg-amber-50/70 rounded-xl p-3 border border-amber-200/60 flex items-center justify-between text-xs">
-                <span className="font-semibold text-stone-700 flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5 text-amber-700" />
-                  Return Trip:
-                </span>
-                <span className="font-bold text-stone-900">
-                  Departs Temple at 8:15 PM
-                </span>
+              <div className="bg-amber-50/70 rounded-xl p-3 border border-amber-200/60 space-y-1.5 text-xs">
+                <div className="flex items-center justify-between">
+                  <span className="font-semibold text-stone-700 flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-amber-700" />
+                    Return Departure:
+                  </span>
+                  <span className="font-bold text-stone-900">
+                    8:15 PM from Temple
+                  </span>
+                </div>
+                <div className="flex items-center justify-between text-[11px] text-stone-600 pt-1 border-t border-amber-200/50">
+                  <span className="font-medium text-amber-950">Drop-offs:</span>
+                  <span className="font-semibold text-stone-800">
+                    Lacewood 8:45 PM • Mumford 9:00 PM
+                  </span>
+                </div>
               </div>
 
             </div>

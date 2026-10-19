@@ -27,6 +27,7 @@ export interface PickupPoint {
   shortName: string;
   address: string;
   pickupTime: string;
+  dropOffTime?: string;
   description: string;
   landmark: string;
 }

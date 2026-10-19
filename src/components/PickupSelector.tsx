@@ -62,8 +62,13 @@ export const PickupSelector: React.FC<PickupSelectorProps> = ({
                   <div className="flex items-start space-x-2">
                     <Clock className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
                     <div>
-                      <span className="font-semibold text-stone-900">Pickup Time: {pickup.pickupTime}</span>
-                      <p className="text-stone-500 text-[11px]">Please arrive 10 mins early</p>
+                      <div className="font-semibold text-stone-900">Pickup: {pickup.pickupTime}</div>
+                      {pickup.dropOffTime && (
+                        <div className="text-amber-800 font-semibold text-[11px] mt-0.5">
+                          Return Drop-off: {pickup.dropOffTime}
+                        </div>
+                      )}
+                      <p className="text-stone-500 text-[11px]">Please arrive 10 mins early for boarding</p>
                     </div>
                   </div>
 
@@ -84,12 +89,15 @@ export const PickupSelector: React.FC<PickupSelectorProps> = ({
 
       <div className="rounded-xl bg-orange-50/70 border border-orange-200/70 p-4 text-xs text-orange-950 flex items-start space-x-3">
         <AlertCircle className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />
-        <div className="space-y-1">
+        <div className="space-y-1.5">
           <div className="font-semibold text-orange-900">
             Shuttle Itinerary Note:
           </div>
           <p className="text-stone-600">
-            The bus picks up devotees at <strong>Mumford Terminal</strong> first at <strong>3:15 PM</strong>, then arrives at <strong>Lacewood Terminal</strong> at <strong>3:30 PM</strong>, before proceeding directly to ISKCON Halifax Temple (29 Westwood Blvd, Upper Tantallon, B3M 1G5) for the 5:00 PM program.
+            <strong>Outbound:</strong> Devotees are picked up at <strong>Mumford Terminal</strong> at <strong>3:15 PM</strong>, then <strong>Lacewood Terminal</strong> at <strong>3:30 PM</strong>, arriving at ISKCON Halifax Temple (29 Westwood Blvd, Upper Tantallon, B3M 1G5) for the 5:00 PM program.
+          </p>
+          <p className="text-stone-600">
+            <strong>Return:</strong> Departs temple at <strong>8:15 PM</strong>, dropping off at <strong>Lacewood Terminal</strong> at <strong>8:45 PM</strong>, then <strong>Mumford Terminal</strong> at <strong>9:00 PM</strong>.
           </p>
         </div>
       </div>
