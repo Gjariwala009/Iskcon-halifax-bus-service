@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, MapPin, Clock, ArrowRight, Shield, CheckCircle2, Bus, Users } from 'lucide-react';
+import { Sparkles, MapPin, Clock, ArrowRight, Shield, CheckCircle2, Bus, Users, Baby } from 'lucide-react';
 
 interface HeroProps {
   onScrollToBook: () => void;
@@ -49,7 +49,18 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToBook }) => {
               </div>
               <div className="flex items-start space-x-2.5">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
-                <span className="text-sm text-stone-700"><strong>Zero Platform Fees:</strong> 100% processed via Zeffy</span>
+                <span className="text-sm text-stone-700"><strong>Instant Confirmation:</strong> Simple & secure online reservation</span>
+              </div>
+            </div>
+
+            {/* Family & Kids Seat Note */}
+            <div className="flex items-start space-x-2.5 p-3 rounded-xl bg-amber-50/70 border border-amber-200/70 text-xs text-stone-700">
+              <Baby className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+              <div>
+                <span className="font-bold text-amber-950">Traveling with Children? </span>
+                <span>
+                  The seat cost is the same as adult tickets. For passenger safety, children must be seated in the bus just like in a car (please bring your child's booster or car seat; no lap seating).
+                </span>
               </div>
             </div>
 
@@ -59,7 +70,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToBook }) => {
                 onClick={onScrollToBook}
                 className="inline-flex items-center justify-center space-x-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-bold text-base shadow-lg shadow-orange-600/25 hover:shadow-xl hover:shadow-orange-600/35 transition transform active:scale-95"
               >
-                <span>Reserve Your Seat on Zeffy</span>
+                <span>Reserve Your Seat</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -93,7 +104,7 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToBook }) => {
                 </div>
               </div>
 
-              {/* Verified Zeffy Ticketing Banner */}
+              {/* Official Booking Banner */}
               <div className="space-y-1.5 bg-gradient-to-r from-amber-50 to-orange-50/60 p-3.5 rounded-xl border border-amber-200/70 text-xs">
                 <div className="flex items-center justify-between font-semibold text-stone-800">
                   <span className="flex items-center gap-1.5">
@@ -101,12 +112,16 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToBook }) => {
                     Official Online Booking
                   </span>
                   <span className="text-[11px] text-amber-800 font-bold bg-white px-2 py-0.5 rounded border border-amber-200">
-                    Zero Extra Fees
+                    Confirmed Seat
                   </span>
                 </div>
                 <p className="text-[11px] text-stone-600 leading-snug">
-                  Seat reservations and contributions are safely processed via Zeffy. 100% of contributions directly support the bus rental.
+                  Seat reservations and contributions directly support our devotee bus shuttle rental.
                 </p>
+                <div className="flex items-center gap-1.5 text-[11px] text-stone-700 pt-1 border-t border-amber-200/50">
+                  <Baby className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                  <span><strong>Child Seats:</strong> Same fare; personal car/booster seat required.</span>
+                </div>
               </div>
 
               {/* Route Timeline */}

@@ -175,7 +175,7 @@ export const ConfirmationView: React.FC<ConfirmationViewProps> = ({
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-1 text-amber-700 font-bold hover:underline"
             >
-              <span>Zeffy Payment Link</span>
+              <span>Online Contribution Link</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </a>
           </div>

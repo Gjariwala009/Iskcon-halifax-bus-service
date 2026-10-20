@@ -402,7 +402,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             </div>
             <div className="flex items-center space-x-1 text-xs text-stone-500">
               <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Zeffy Payment</span>
+              <span>Online Payment</span>
             </div>
           </div>
 
@@ -421,7 +421,7 @@ export const BookingForm: React.FC<BookingFormProps> = ({
             )}
           </button>
           <p className="text-[11px] text-stone-400 text-center mt-2">
-            You will receive a unique booking reference and be directed to Zeffy for payment processing.
+            You will receive a unique booking reference and be directed to secure payment processing.
           </p>
         </div>
       </form>

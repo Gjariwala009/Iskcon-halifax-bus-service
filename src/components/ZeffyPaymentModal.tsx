@@ -46,7 +46,7 @@ export const ZeffyPaymentModal: React.FC<ZeffyPaymentModalProps> = ({
                 </span>
               </div>
               <h3 className="text-lg sm:text-xl font-black text-stone-900 tracking-tight mt-0.5">
-                Complete Payment via Zeffy
+                Complete Online Contribution
               </h3>
             </div>
           </div>
