@@ -45,6 +45,11 @@ export const APP_CONFIG = {
         description: 'For safety, passenger comfort, and vehicle insurance compliance, children cannot be seated on adult laps.',
       },
     ],
+    passengerAgeCategories: [
+      { label: 'Adult (14+ years)', description: 'Standard vehicle seatbelt' },
+      { label: 'Child (9 – 13 years)', description: 'Standard vehicle seatbelt' },
+      { label: 'Child (Under 9 years) — Passenger will bring Booster / Car Seat', description: 'Required by Nova Scotia law' },
+    ],
   },
 
   // 2 Halifax Pickup Points

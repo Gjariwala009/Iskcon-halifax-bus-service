@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, ExternalLink, Heart, Sparkles, MapPin, Baby, Car, ShieldAlert, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, ExternalLink, Heart, Sparkles, MapPin, Baby, Car, ShieldAlert, CheckCircle2, Info } from 'lucide-react';
 import { APP_CONFIG } from '../config/appConfig';
 
 interface ZeffyEmbedBookingProps {
@@ -113,6 +113,28 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
             <p className="text-[11px] text-stone-600 leading-relaxed">
               Parents/guardians are responsible for bringing and securing the child's car or booster seat. For vehicle safety and insurance compliance, children cannot ride on laps.
             </p>
+          </div>
+        </div>
+
+        {/* Passenger Category Options Breakdown */}
+        <div className="bg-amber-100/60 rounded-xl p-3 border border-amber-200/70 text-xs">
+          <div className="font-bold text-amber-950 mb-1.5 flex items-center gap-1.5">
+            <Info className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+            <span>Passenger Age Category (Selected on booking form):</span>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[11px] text-stone-700">
+            <div className="bg-white/85 rounded-lg p-2.5 border border-amber-200/50 space-y-0.5">
+              <span className="font-bold text-stone-900 block">Adult (14+ yrs)</span>
+              <span className="text-stone-500">Standard seatbelt</span>
+            </div>
+            <div className="bg-white/85 rounded-lg p-2.5 border border-amber-200/50 space-y-0.5">
+              <span className="font-bold text-stone-900 block">Child (9 – 13 yrs)</span>
+              <span className="text-stone-500">Standard seatbelt</span>
+            </div>
+            <div className="bg-white/85 rounded-lg p-2.5 border border-amber-300 space-y-0.5 ring-1 ring-amber-300/60">
+              <span className="font-bold text-amber-950 block">Child (Under 9 yrs)</span>
+              <span className="text-amber-800 font-medium">Passenger will bring booster / car seat</span>
+            </div>
           </div>
         </div>
       </div>
