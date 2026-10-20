@@ -23,7 +23,7 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
           Reserve Your Seat on the Devotee Shuttle
         </h2>
         <p className="text-xs sm:text-sm text-stone-600 max-w-lg mx-auto">
-          Select your ticket and pickup location in one single step below. 100% of your contribution goes to ISKCON Halifax with zero platform fees.
+          Select your ticket and pickup location in one simple step below. Your contribution directly supports the devotee bus shuttle service.
         </p>
       </div>
 
@@ -144,7 +144,7 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
         <div className="bg-stone-900 text-white px-4 py-3 flex items-center justify-between text-xs">
           <div className="flex items-center space-x-2">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span className="font-semibold">Official ISKCON Halifax Bus Shuttle Checkout</span>
+            <span className="font-semibold">Official ISKCON Halifax Bus Shuttle Reservation</span>
           </div>
           <a
             href={APP_CONFIG.zeffyPaymentUrl}
@@ -160,7 +160,7 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
         {/* Embedded iFrame */}
         <div className="w-full h-[680px] sm:h-[750px] bg-white relative">
           <iframe
-            title="ISKCON Halifax Devotee Bus Shuttle Payment"
+            title="ISKCON Halifax Devotee Bus Shuttle Reservation"
             src={APP_CONFIG.zeffyEmbedUrl}
             className="w-full h-full border-0"
             allow="payment"
