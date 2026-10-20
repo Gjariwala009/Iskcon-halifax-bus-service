@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, ExternalLink, Heart, Sparkles, MapPin } from 'lucide-react';
+import { ShieldCheck, ExternalLink, Heart, Sparkles, MapPin, Baby, Car, ShieldAlert, CheckCircle2 } from 'lucide-react';
 import { APP_CONFIG } from '../config/appConfig';
 
 interface ZeffyEmbedBookingProps {
@@ -59,6 +59,60 @@ export const ZeffyEmbedBooking: React.FC<ZeffyEmbedBookingProps> = ({ bookingSec
             <div className="font-bold text-stone-900">Temple Destination</div>
             <div className="text-emerald-900 font-semibold mt-0.5">Arrive: 4:00 PM (Darshan) • Depart: 8:15 PM</div>
             <div className="text-stone-500 text-[11px] mt-0.5">{APP_CONFIG.templeAddress}</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Child & Booster Seat Policy Card */}
+      <div className="bg-gradient-to-br from-amber-50/90 via-orange-50/40 to-stone-50 rounded-2xl border border-amber-200/90 p-5 shadow-sm space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-amber-200/60 pb-3">
+          <div className="flex items-center space-x-2.5">
+            <div className="w-8 h-8 rounded-lg bg-amber-600 text-white flex items-center justify-center shrink-0 shadow-sm">
+              <Baby className="w-4 h-4" />
+            </div>
+            <div>
+              <h3 className="text-sm sm:text-base font-bold text-stone-900 flex items-center gap-2">
+                Child & Booster Seat Policy
+              </h3>
+              <p className="text-[11px] text-stone-500">
+                Essential safety and seating guidelines for families traveling with children
+              </p>
+            </div>
+          </div>
+          <div className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-white border border-amber-300 text-amber-900 text-[11px] font-bold self-start sm:self-auto shadow-xs">
+            <span>Same Ticket Cost • 1 Dedicated Seat Per Child</span>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+          <div className="bg-white/90 rounded-xl p-3.5 border border-amber-100 space-y-1">
+            <div className="font-bold text-stone-900 flex items-center gap-1.5">
+              <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+              <span>Same Cost as Adult Tickets</span>
+            </div>
+            <p className="text-[11px] text-stone-600 leading-relaxed">
+              Because shuttle capacity is strictly limited to 14 seats, every child/infant occupies an individual seat and requires a standard seat reservation.
+            </p>
+          </div>
+
+          <div className="bg-white/90 rounded-xl p-3.5 border border-amber-100 space-y-1">
+            <div className="font-bold text-stone-900 flex items-center gap-1.5">
+              <Car className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+              <span>Same Safety Rules as a Car</span>
+            </div>
+            <p className="text-[11px] text-stone-600 leading-relaxed">
+              Children must be seated following Nova Scotia vehicle safety laws just like in a personal car (e.g., booster seat, or forward/rear-facing child seat).
+            </p>
+          </div>
+
+          <div className="bg-white/90 rounded-xl p-3.5 border border-amber-100 space-y-1">
+            <div className="font-bold text-stone-900 flex items-center gap-1.5">
+              <ShieldAlert className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+              <span>Bring Seat • No Lap Sitting</span>
+            </div>
+            <p className="text-[11px] text-stone-600 leading-relaxed">
+              Parents/guardians are responsible for bringing and securing the child's car or booster seat. For vehicle safety and insurance compliance, children cannot ride on laps.
+            </p>
           </div>
         </div>
       </div>

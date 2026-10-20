@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sparkles, MapPin, Clock, ArrowRight, Shield, CheckCircle2, Bus, Users } from 'lucide-react';
+import { Sparkles, MapPin, Clock, ArrowRight, Shield, CheckCircle2, Bus, Users, Baby } from 'lucide-react';
 
 interface HeroProps {
   onScrollToBook: () => void;
@@ -50,6 +50,17 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToBook }) => {
               <div className="flex items-start space-x-2.5">
                 <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
                 <span className="text-sm text-stone-700"><strong>Zero Platform Fees:</strong> 100% processed via Zeffy</span>
+              </div>
+            </div>
+
+            {/* Family & Kids Seat Note */}
+            <div className="flex items-start space-x-2.5 p-3 rounded-xl bg-amber-50/70 border border-amber-200/70 text-xs text-stone-700">
+              <Baby className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+              <div>
+                <span className="font-bold text-amber-950">Traveling with Children? </span>
+                <span>
+                  The seat cost is the same as adult tickets. For passenger safety, children must be seated in the bus just like in a car (please bring your child's booster or car seat; no lap seating).
+                </span>
               </div>
             </div>
 
@@ -107,6 +118,10 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToBook }) => {
                 <p className="text-[11px] text-stone-600 leading-snug">
                   Seat reservations and contributions are safely processed via Zeffy. 100% of contributions directly support the bus rental.
                 </p>
+                <div className="flex items-center gap-1.5 text-[11px] text-stone-700 pt-1 border-t border-amber-200/50">
+                  <Baby className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                  <span><strong>Child Seats:</strong> Same fare; personal car/booster seat required.</span>
+                </div>
               </div>
 
               {/* Route Timeline */}

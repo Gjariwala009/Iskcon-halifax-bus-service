@@ -22,6 +22,31 @@ export const APP_CONFIG = {
   supportPhone: '+1 (902) 000-0000',
   supportEmail: 'iskconhalifax@gmail.com',
 
+  // Child & Family Seating Policy
+  childSeatPolicy: {
+    title: 'Child & Booster Seat Policy',
+    costSummary: 'Same ticket cost as adult seats',
+    keyNote: 'Every child occupies an individual seat (14 seats max) and must be seated in an appropriate car seat or booster seat just like in a car. No lap seating allowed.',
+    points: [
+      {
+        title: 'Individual Ticket Required',
+        description: 'Because shuttle capacity is strictly limited to 14 seats, every child/infant requires their own reserved ticket at the regular contribution amount.',
+      },
+      {
+        title: 'Car & Booster Seat Safety',
+        description: 'Children must be seated following Nova Scotia vehicle safety laws—the same as in a personal car (rear-facing, forward-facing child seat, or booster seat based on age/weight).',
+      },
+      {
+        title: 'Parents Must Bring Child Seats',
+        description: 'Parents or guardians are responsible for bringing and securing their child\'s certified car seat or booster seat on the bus.',
+      },
+      {
+        title: 'Strictly No Lap Seating',
+        description: 'For safety, passenger comfort, and vehicle insurance compliance, children cannot be seated on adult laps.',
+      },
+    ],
+  },
+
   // 2 Halifax Pickup Points
   pickupPoints: [
     {
